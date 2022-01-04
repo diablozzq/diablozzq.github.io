@@ -304,8 +304,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-site" class="md-nav__link">
-    Building site
+  <a href="#building-the-site" class="md-nav__link">
+    Building the site
   </a>
   
 </li>
@@ -387,8 +387,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-site" class="md-nav__link">
-    Building site
+  <a href="#building-the-site" class="md-nav__link">
+    Building the site
   </a>
   
 </li>
@@ -448,7 +448,9 @@
 </code></pre>
 <p>The <code>Notes</code> directory is where I store all my notes. This folder is a private github repository.  The <code>public</code> subfolder contains blog posts.  This structure allows me to quickly convert notes -&gt; blogs.</p>
 <p>The <code>diablozzq.github.io</code> directory is where the output of <code>mkdocs build</code> goes.  Its a github repository, which when commits are pushed, updated the blog on the Github pages.</p>
+<blockquote>
 <p>Note: there is a 10+ second delay from push to seeing the updated blog.  Also, make sure to hold <code>shift</code> when refreshing to clear the cache.</p>
+</blockquote>
 <h2 id="setting-up-mkdocsyml">Setting up mkdocs.yml</h2>
 <p>Here is an example of this sites mkdocs.yml file</p>
 <p>Most of the config is rather obvious.  Look up the documentation for more specifics.</p>
@@ -469,7 +471,7 @@ plugins:
 docs_dir: public
 site_dir: ../diablozzq.github.io
 </code></pre>
-<h2 id="building-site">Building site</h2>
+<h2 id="building-the-site">Building the site</h2>
 <p><code>mkdocs build</code> or <code>python3 -m mkdocs build</code></p>
 <p><code>cd ..\&lt;page name&gt;</code></p>
 <p><code>git add *</code></p>
