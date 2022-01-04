@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setting-up-mkdocsyml" class="md-nav__link">
     Setting up mkdocs.yml
   </a>
@@ -366,6 +373,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#folder-structure" class="md-nav__link">
+    Folder structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setting-up-mkdocsyml" class="md-nav__link">
     Setting up mkdocs.yml
   </a>
@@ -425,13 +439,42 @@
 <li>Install python</li>
 <li>Run <code>pip install mkdocs-material</code></li>
 </ul>
+<h2 id="folder-structure">Folder structure</h2>
+<p>Mkdocs requires a mkdocs.yml, a folder with Markdown docs, and a directory to output the site.</p>
+<p>My current structure is the following:</p>
+<pre><code>..\diablozzq.github.io\&lt;static site&gt;
+..\Notes\public\&lt;markdown docs&gt;
+..\Notes\mkdocs.yml
+</code></pre>
+<p>The <code>Notes</code> directory is where I store all my notes. This folder is a private github repository.  The <code>public</code> subfolder contains blog posts.  This structure allows me to quickly convert notes -&gt; blogs.</p>
+<p>The <code>diablozzq.github.io</code> directory is where the output of <code>mkdocs build</code> goes.  Its a github repository, which when commits are pushed, updated the blog on the Github pages.</p>
+<p>Note: there is a 10+ second delay from push to seeing the updated blog.  Also, make sure to hold <code>shift</code> when refreshing to clear the cache.</p>
 <h2 id="setting-up-mkdocsyml">Setting up mkdocs.yml</h2>
+<p>Here is an example of this sites mkdocs.yml file</p>
+<p>Most of the config is rather obvious.  Look up the documentation for more specifics.</p>
+<pre><code class="language-yaml">site_name: NetSecOps.dev
+site_author: Kasey Morland
+site_description: A site about various tech topics
+copyright:
+site_url: https://diablozzq.github.io/
+repo_url: https://github.com/diablozzq/diablozzq.github.io
+theme:
+  name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+plugins:
+  - search
+docs_dir: public
+site_dir: ../diablozzq.github.io
+</code></pre>
 <h2 id="building-site">Building site</h2>
-<p><code>mkdocs build</code> or <code>python3 -m mkdocs build</code>
-<code>cd ..\&lt;page name&gt;</code>
-<code>git add *</code>
-<code>git commit -a -m "&lt;commit message&gt;"</code>
-<code>git push</code></p>
+<p><code>mkdocs build</code> or <code>python3 -m mkdocs build</code></p>
+<p><code>cd ..\&lt;page name&gt;</code></p>
+<p><code>git add *</code></p>
+<p><code>git commit -a -m "&lt;commit message&gt;"</code></p>
+<p><code>git push</code></p>
 <p>Or as I use in a terminal one liner:</p>
 <pre><code class="language-bash">cd ~/OneDrive/Notes &amp;&amp; python3 -m mkdocs build &amp;&amp; cd ~/OneDrive/diablozzq.github.io &amp;&amp; git add * &amp;&amp; git commit -a -m &quot;blog update&quot; &amp;&amp; git push
 </code></pre>
